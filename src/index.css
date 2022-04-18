@@ -5,9 +5,183 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  color: white ; 
+  height: 1000px;
+  
+
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
+}
+.Pomodoro--style{
+  background-color: rgb(217, 85, 80) ;
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+
+.Break--style {
+  background-color: rgb(76, 145, 149);
+  transition-property: background-color;
+  transition-duration: 1s;
+  
+}
+
+.Long--style {
+  background-color: rgb(69, 124, 163);
+  transition-property: background-color;
+  transition-duration: 1s;
+  
+}
+
+
+
+.nav--container {
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: solid;
+  border-width: thin;
+  border-color:   #888888;
+  
+}
+
+.nav--center {
+  width:70vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav--logo {
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+ 
+}
+
+.nav--image {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+}
+
+.nav--description {
+  font-size: 30px;
+  cursor: pointer;
+
+}
+
+.nav--buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.display{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100vw;
+  height:60vh;
+  padding: 20px;
+}
+
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  /*border-style: solid;*/
+}
+
+.option {
+  font-weight:bold;
+  font-size:16px;
+  /*border-style: solid;*/
+  padding: 2px 12px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: ArialRounded;
+}
+
+.clock--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  /*border-style: solid;*/
+  height: 270px;
+  padding: 20px;
+  width: 490px;
+  /*border-style: solid;*/
+}
+
+.counter--text {
+  font-size: 100px;
+  font-weight: bold;
+  
+}
+
+.button--stop {
+  display: flex;
+  justify-content: center;
+  /*border-style: solid ;*/
+  height:60px;
+}
+
+.stop--button { 
+  width:100px; 
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.tracker--container {
+  border-style: solid;
+  border-color: black;
+}
+
+.taskList--container {
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  height: 30vh;
+}
+
+.taskList--header {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.taskList--add {
+  width: 200px;
+  height: 50px;
+}
+
+.collapsible .content {
+  padding: 6px;
+  background-color: black;
+  width: 100px;
+}
+
+.collapsible .header {
+  background-color: black;
+  padding: 6px;
+  cursor: pointer;
+  width: 100px;
 }
