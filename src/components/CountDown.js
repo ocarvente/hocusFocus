@@ -77,7 +77,7 @@ export default function CountDown (props) {
                     <button className="option" onClick={() => changeMode("Long")}>Long Break</button>
                 </div>
                 <span className="counter--text">{timeString}</span>
-                <button className="stop--button" onClick={handleClick}>
+                <button className="start--button" onClick={handleClick}>
                 {isRunning ? "Pause" : "Start"}
                 </button> 
             </div>
