@@ -81,7 +81,7 @@ export default function TaskList() {
     function deleteTask(event, taskId) {
         event.stopPropagation()
         setTasks(oldTasks => {
-            return oldTasks.filter(oldTask => oldTask.id !== taskId)
+            return oldTasks.filter(oldTask => oldTask.id !=taskId)
         })
         
     }
@@ -89,13 +89,9 @@ export default function TaskList() {
 
     
     return (
-        <div className ="taskList--body">
-            <div className="taskList--container">
-                {taskList}
-                <button className="taskList--add" onClick={createNewTask}>
-                    Add Task {" "}
-                </button>
-            </div>
+        <div className ="taskList--container">
+            {taskList}
+            <button className="taskList--add" onClick={createNewTask}>Add Task </button>
         </div>
     )
 }
