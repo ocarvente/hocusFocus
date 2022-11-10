@@ -81,7 +81,7 @@ export default function TaskList() {
     function deleteTask(event, taskId) {
         event.stopPropagation()
         setTasks(oldTasks => {
-            return oldTasks.filter(oldTask => oldTask.id !=taskId)
+            return oldTasks.filter(oldTask => oldTask.id !== taskId)
         })
         
     }

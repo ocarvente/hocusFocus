@@ -1,17 +1,7 @@
-import React, {useState} from "react";
 
-import useCollapse from 'react-collapsed';
 
 export default function Collapsible(props) {
-  const {
-    key,
-    taskId,
-    name,
-    description,
-    isExpanded,
-    updateTask,
-    setCurrentTaskId,
-  } = props;
+  
 
     const { key, name, description, isExpanded, updateTask, setCurrentTaskId} = props
 

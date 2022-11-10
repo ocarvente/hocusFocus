@@ -23,7 +23,7 @@ export default function CountDown (props) {
             }
         }
 
-    }, [seconds])
+    })
     
     function changeMode(chosenMode) {
         if (isRunning) {
