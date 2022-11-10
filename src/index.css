@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300;
   color: white ; 
-  height: 100%;
 }
 
 code {
@@ -16,6 +15,9 @@ code {
 
 }
 .hocusFocus--style{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color:  rgb(60,9,108);
   transition-property: background-color;
   transition-duration: 1s;
@@ -27,6 +29,9 @@ code {
   background-color: rgb(255,109,0);
   transition-property: background-color;
   transition-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   
 }
 
@@ -34,6 +39,9 @@ code {
   background-color: rgb(255, 158, 0);
   transition-property: background-color;
   transition-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   
 }
 
