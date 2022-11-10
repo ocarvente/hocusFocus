@@ -6,7 +6,7 @@ import TaskList from "./components/TaskList"
 
 function App() {
 
-  const [mode, setMode] = useState(/*JSON.parse(localStorage.getItem('mode')) ||*/"Pomodoro")
+  const [mode, setMode] = useState(/*JSON.parse(localStorage.getItem('mode')) ||*/"hocusFocus")
 
   
 
