@@ -6,13 +6,12 @@ import Collapsible from "./Collapsible"
 export default function TaskList() {
 
     const [tasks, setTasks] = useState([])
-    console.log(tasks)
+  
 
-    /*const [currentTaskId, setCurrentTaskId] = useState(
-        (tasks[lastElement] && tasks[lastElement].id) || ""
-    )*/
+    const [currentTaskId, setCurrentTaskId] = useState("")
 
     function createNewTask() {
+        unExpandCurrentTask()
         const newTask = {
             id: nanoid(),
             name: "",
@@ -20,7 +19,13 @@ export default function TaskList() {
             isCompleted: false 
         }
         setTasks(prevTasks => [...prevTasks, newTask])
-        //setCurrentTaskId(newTask.id)
+        setCurrentTaskId(newTask.id)
+    }
+
+    function unExpandCurrentTask() {
+        if (currentTaskId === "") return 
+        const currentTask = tasks.find((task) => task.id === currentTaskId) 
+        updateTask(currentTask.id, currentTask.name, false)
     }
 
 
@@ -37,7 +42,7 @@ export default function TaskList() {
             isExpanded={task.isExpanded}
             deleteTask = {deleteTask}
             isCompleted = {task.isCompleted}
-            //setCurrentTaskId = {setCurrentTaskId}
+            setCurrentTaskId = {setCurrentTaskId}
         /> 
     ));
 
