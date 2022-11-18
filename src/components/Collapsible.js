@@ -44,8 +44,8 @@ export default function Collapsible(props) {
                             name="description"
                             // value={description}
                             onChange={(event) => updateTask(event) }
-                        />
-                        <div> */}
+                        />*/}
+                        <div> 
                             <button name="isExpanded" onClick = {handleSubmit}>Save</button>
                             <button>Delete</button>
                         </div>
