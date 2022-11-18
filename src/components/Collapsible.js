@@ -4,7 +4,7 @@ import { createRef } from "react"
 export default function Collapsible(props) {
   
 
-    const { key, name, description, isExpanded, updateTask, setCurrentTaskId} = props
+    const { taskId, name, isExpanded, updateTask, setCurrentTaskId} = props
 
     const formName = createRef()
 
@@ -12,13 +12,12 @@ export default function Collapsible(props) {
     function handleSubmit(event) {
         event.preventDefault()
         console.log(formName.current.value)
-        updateTask(event)
+        updateTask(taskId, formName.current.value, false)
     }
 
     function handleEdit(event) {
-        setCurrentTaskId(key)
-        updateTask(event)
-       
+        setCurrentTaskId(taskId)
+        updateTask(taskId, name, true)
 
     }
 

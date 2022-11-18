@@ -6,7 +6,7 @@ import Collapsible from "./Collapsible"
 export default function TaskList() {
 
     const [tasks, setTasks] = useState([])
-    
+    console.log(tasks)
 
     /*const [currentTaskId, setCurrentTaskId] = useState(
         (tasks[lastElement] && tasks[lastElement].id) || ""
@@ -16,9 +16,8 @@ export default function TaskList() {
         const newTask = {
             id: nanoid(),
             name: "",
-            description: "",
             isExpanded: true,
-            isCompleted: false  
+            isCompleted: false 
         }
         setTasks(prevTasks => [...prevTasks, newTask])
         //setCurrentTaskId(newTask.id)
@@ -33,7 +32,7 @@ export default function TaskList() {
             key ={task.id}
             taskId={task.id}
             name = {task.name}
-            description = {task.description}
+            
             updateTask = {updateTask}
             isExpanded={task.isExpanded}
             deleteTask = {deleteTask}
@@ -43,14 +42,13 @@ export default function TaskList() {
     ));
 
 
-    function updateTask(taskId, name, description) {
+    function updateTask(taskId, name, isExpanded) {
         let newTasks = tasks.reduce((res,elem) => {
             elem.id === taskId ? 
             res.push(
             {   ...elem,
                 name: name,
-                description: description,
-                isExpanded: !elem.isExpanded
+                isExpanded: isExpanded
             }) 
                 :
             res.push(elem);
