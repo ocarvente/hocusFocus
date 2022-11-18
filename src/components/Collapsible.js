@@ -1,3 +1,4 @@
+import { createRef } from "react"
 
 
 export default function Collapsible(props) {
@@ -5,10 +6,12 @@ export default function Collapsible(props) {
 
     const { key, name, description, isExpanded, updateTask, setCurrentTaskId} = props
 
+    const formName = createRef()
 
 
     function handleSubmit(event) {
         event.preventDefault()
+        console.log(formName.current.value)
         updateTask(event)
     }
 
@@ -31,9 +34,10 @@ export default function Collapsible(props) {
                             className="form-input"
                             name="name"
                             // value={name}
+                            ref = {formName}
                             onChange={(event) => updateTask(event)}
                         />
-                        <input
+                        {/* <input
                             type="text"
                             placeholder="Description"
                             className="form-input"
@@ -41,7 +45,7 @@ export default function Collapsible(props) {
                             // value={description}
                             onChange={(event) => updateTask(event) }
                         />
-                        <div>
+                        <div> */}
                             <button name="isExpanded" onClick = {handleSubmit}>Save</button>
                             <button>Delete</button>
                         </div>
