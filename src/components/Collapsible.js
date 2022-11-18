@@ -9,13 +9,11 @@ export default function Collapsible(props) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(event)
         updateTask(event)
     }
 
     function handleEdit(event) {
         setCurrentTaskId(key)
-        console.log(event)
         updateTask(event)
        
 
@@ -32,7 +30,7 @@ export default function Collapsible(props) {
                             placeholder="What are you working on?"
                             className="form-input"
                             name="name"
-                            value={name}
+                            // value={name}
                             onChange={(event) => updateTask(event)}
                         />
                         <input
@@ -40,11 +38,12 @@ export default function Collapsible(props) {
                             placeholder="Description"
                             className="form-input"
                             name="description"
-                            value={description}
+                            // value={description}
                             onChange={(event) => updateTask(event) }
                         />
                         <div>
                             <button name="isExpanded" onClick = {handleSubmit}>Save</button>
+                            <button>Delete</button>
                         </div>
                     </form >
                 </div >
