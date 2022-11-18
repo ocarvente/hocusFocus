@@ -29,6 +29,7 @@ export default function Collapsible(props) {
                 <div className = "form-container">
                     < form className = "form" >
                         <input
+                            defaultValue={name}
                             type="text"
                             placeholder="What are you working on?"
                             className="form-input"
