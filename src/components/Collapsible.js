@@ -55,7 +55,6 @@ export default function Collapsible(props) {
                 <div className="task--container">
                     <div className="task-info">
                         <div>{name}</div>
-                        <div>{description}</div>
                     </div>
                     
                     <button name="isExpanded" onClick={handleEdit}>Edit</button>
