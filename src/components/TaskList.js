@@ -43,6 +43,7 @@ export default function TaskList() {
             deleteTask = {deleteTask}
             isCompleted = {task.isCompleted}
             setCurrentTaskId = {setCurrentTaskId}
+            
         /> 
     ));
 
@@ -81,8 +82,7 @@ export default function TaskList() {
 
     // }
 
-    function deleteTask(event, taskId) {
-        event.stopPropagation()
+    function deleteTask(taskId) {
         setTasks(oldTasks => {
             return oldTasks.filter(oldTask => oldTask.id !== taskId)
         })

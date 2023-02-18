@@ -4,14 +4,13 @@ import { createRef } from "react"
 export default function Collapsible(props) {
   
 
-    const { taskId, name, isExpanded, updateTask, setCurrentTaskId} = props
+    const { taskId, name, isExpanded, updateTask, setCurrentTaskId, deleteTask} = props
 
     const formName = createRef()
 
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(formName.current.value)
         updateTask(taskId, formName.current.value, false)
     }
 
@@ -21,6 +20,18 @@ export default function Collapsible(props) {
 
     }
 
+    function handleDelete(event) {
+        setCurrentTaskId(""); 
+        deleteTask(taskId);
+    }
+
+    function handleCancel(event) {
+        if (formName.current.value === "")  {
+            handleDelete(event);
+        } else {
+            handleSubmit(event);
+        }
+    }
 
     return (
       
@@ -47,7 +58,8 @@ export default function Collapsible(props) {
                         />*/}
                         <div> 
                             <button name="isExpanded" onClick = {handleSubmit}>Save</button>
-                            <button>Delete</button>
+                            <button onClick = {handleDelete}>Delete</button>
+                            <button onClick = {handleCancel}>Cancel</button>
                         </div>
                     </form >
                 </div >
