@@ -4,6 +4,9 @@ import Tracker from "./Tracker"
 
 export default function Display(props) {
 
+    const {pomodoro, shortBreak, longBreak } = props
+
+
     const [pomoTracker, setPomoTracker] = useState(/*JSON.parse(localStorage.getItem('pomoCount')) || */1)
 
 
@@ -33,6 +36,10 @@ export default function Display(props) {
                 setMode ={props.setMode}
                 pomoTracker = {pomoTracker}
                 handlePomoTracker = {handlePomoTracker}
+                pomodoro = {pomodoro}
+                shortBreak = {shortBreak}
+                longBreak = {longBreak}
+                
             />
             <Tracker
                 mode = {props.mode}

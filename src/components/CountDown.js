@@ -3,12 +3,12 @@ import React, {useState, useEffect} from "react"
 
 
 export default function CountDown (props) {
+    const{mode, pomoTracker, handlePomoTracker, pomodoro, shortBreak, longBreak} = props
 
-    const [seconds, setSeconds] = useState(15)
+    const [seconds, setSeconds] = useState(pomodoro*60)
     const[nIntervID, setNIntervID] = useState(null)
     const[isRunning, setIsRunning] = useState(false)
 
-    const{mode, pomoTracker, handlePomoTracker} = props
 
     useEffect(() => {
         if (seconds === 0) {
@@ -21,9 +21,11 @@ export default function CountDown (props) {
                 changeMode("hocusFocus");
                 handlePomoTracker();
             }
+        } else {
+            setSeconds(pomodoro*60);
         }
 
-    })
+    },[pomodoro])
     
     function changeMode(chosenMode) {
         if (isRunning) {
@@ -31,11 +33,11 @@ export default function CountDown (props) {
         }
         props.setMode(chosenMode)
         if (chosenMode === "hocusFocus") {
-            setSeconds(25)
+            setSeconds(pomodoro*60)
         } else if (chosenMode ==="Break") {
-            setSeconds(5)
+            setSeconds(shortBreak*60)
         } else if (chosenMode ==="Long") {
-            setSeconds(15)
+            setSeconds(longBreak*60)
         }
     }
 
