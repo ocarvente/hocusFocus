@@ -24,11 +24,6 @@ export default function Navbar (props) {
         setOpen(false);
     }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        setPomodoro(pomoInput);
-        handleClose();
-    }
     return (
         <div className="nav--container">
            <div className="nav--center">
@@ -42,18 +37,29 @@ export default function Navbar (props) {
                     <Dialog open={open} onClose={handleClose}>
                         <DialogTitle>Settings</DialogTitle>
                         <DialogContent>
+                            <label for="pomodoro">Pomodoro</label>
                             <input 
+                                id="pomodoro"
+                                name="pomodoro"
                                 type="number" 
                                 value={pomodoro} 
                                 onChange ={(event) => setPomodoro(event.target.value)}
                             ></input>
+                            <label for="shortBreak">Short Break</label>
+
                             <input 
+                                id="shortBreak"
+                                name="shortBreak"
                                 type="number" 
                                 value={shortBreak}
                                 onChange ={(event) => setShortBreak(event.target.value)}
 
                             ></input>
+                            <label for="longBreak">Long Break</label>
+
                             <input
+                                id="longBreak"
+                                name="longBreak"
                              type="number" 
                              value={longBreak}
                              onChange ={(event) => setLongBreak(event.target.value)}
