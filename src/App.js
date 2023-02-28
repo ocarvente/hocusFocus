@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import Navbar from "./components/Navbar"
 import Display from "./components/Display"
 import TaskList from "./components/TaskList"
@@ -17,6 +17,7 @@ function App() {
   return (
     <div className={`${mode}--style`}>
         <Navbar
+          mode = {mode}
           pomodoro ={pomodoro}
           setPomodoro = {setPomodoro}
           shortBreak = {shortBreak}
