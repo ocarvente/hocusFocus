@@ -64,7 +64,7 @@ export default function Collapsible(props) {
                             // value={description}
                             onChange={(event) => updateTask(event) }
                         />*/}
-                        <div> 
+                        <div className="button--spacing"> 
                             <button onClick = {handleSubmit} disabled={data === ""?  true : false}>Save</button>
                             <button onClick = {handleDelete}>Delete</button>
                             <button onClick = {handleCancel}>Cancel</button>
