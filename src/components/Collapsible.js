@@ -73,10 +73,8 @@ export default function Collapsible(props) {
                 </div >
             :
                 <div className="task--container">
-                    <div className="task-info">
-                        <div>{name}</div>
-                    </div>
-                    
+                    <input type="checkbox" />
+                    <div className="task--text">{name}</div>
                     <button name="isExpanded" onClick={handleEdit}>Edit</button>
                     
                 </div>

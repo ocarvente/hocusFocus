@@ -213,6 +213,12 @@ button {
   padding: 20px;
 }
 
+.task--text {
+  margin: 1rem; 
+  overflow: auto;
+  font-weight: bold;
+}
+
 .taskList--header {
   display: flex;
   justify-content: space-between;
@@ -223,6 +229,8 @@ button {
   width: 200px;
   height: 50px;
 }
+
+
 
 .collapsible--buttons--container {
   display: flex;
@@ -275,8 +283,10 @@ button {
   width: 25vw;
   height: auto;
   color: black; 
-  padding: 15px; 
+  padding: 1rem; 
   border-radius: 10px;
+  font-family: Monaco;
+  
 }
 
 .ellipse--img {
