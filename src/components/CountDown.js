@@ -73,7 +73,7 @@ export default function CountDown (props) {
     return (
       
             <div className="clock--container">
-                <div className="buttons">
+                <div className="button--spacing">
                     <button className={mode === "hocusFocus" ? "hocus--selected" : "option"} onClick={() => changeMode("hocusFocus")}>Pomodoro</button>
                     <button className={mode === "Break" ? "break--selected" : "option"} onClick={() => changeMode("Break")}>Short Break</button>
                     <button className={mode === "Long" ? "long--selected" : "option"} onClick={() => changeMode("Long")}>Long Break</button>

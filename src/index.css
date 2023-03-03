@@ -19,8 +19,8 @@ button {
   font-family: Monaco;
   font-size:large;
   font-weight: lighter;
-  font-size: 16px;
-
+  font-size: 1em;
+ 
 }
 .hocusFocus--style{
   display: flex;
@@ -110,7 +110,7 @@ button {
 
 
 
-.buttons {
+.button--spacing {
   display: flex;
   justify-content: center;
   gap: 10px;
