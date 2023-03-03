@@ -226,8 +226,10 @@ button {
 }
 
 .taskList--add {
-  width: 200px;
-  height: 50px;
+  width: 12rem;
+  height: 3.5rem;
+  border-radius: 5px;
+  
 }
 
 
