@@ -6,7 +6,6 @@ import DialogActions from '@mui/material/DialogActions';
 
 import DialogTitle from '@mui/material/DialogTitle';
 import {createTheme,ThemeProvider} from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
 
 export default function Navbar (props) {
     
@@ -63,34 +62,35 @@ export default function Navbar (props) {
                     
                     <Dialog open={open} onClose={handleClose}>
                         <DialogTitle>Settings</DialogTitle>
-                        <DialogContent>
-                            <label for="pomodoro">Pomodoro</label>
+                        <DialogContent className= "dialogContainer">
+                            <label for="pomodoro" className="settings-label">Pomodoro</label>
+                            <label for="shortBreak" className="settings-label">Short Break</label>
+                            <label for="longBreak" className="settings-label">Long Break</label>
+
                             <input 
+                                className="settings-button"
                                 id="pomodoro"
                                 name="pomodoro"
                                 type="number" 
                                 value={pomodoro} 
                                 onChange ={(event) => setPomodoro(event.target.value)}
                             ></input>
-                            <label for="shortBreak">Short Break</label>
-
                             <input 
+                                className="settings-button"
                                 id="shortBreak"
                                 name="shortBreak"
                                 type="number" 
                                 value={shortBreak}
                                 onChange ={(event) => setShortBreak(event.target.value)}
-
                             ></input>
-                            <label for="longBreak">Long Break</label>
 
                             <input
+                                className="settings-button"
                                 id="longBreak"
                                 name="longBreak"
                                 type="number" 
                                 value={longBreak}
                                 onChange ={(event) => setLongBreak(event.target.value)}
-
                             //  ref = {longBreakInput}
                              ></input>
                         </DialogContent>

@@ -1,4 +1,4 @@
-import { createRef } from "react"
+import {  useState} from "react"
 
 
 export default function Collapsible(props) {
@@ -6,12 +6,13 @@ export default function Collapsible(props) {
 
     const { taskId, name, isExpanded, updateTask, setCurrentTaskId, deleteTask} = props
 
-    const formName = createRef()
-
+    
+ 
+    const[data, setData] = useState(name);
 
     function handleSubmit(event) {
         event.preventDefault()
-        updateTask(taskId, formName.current.value, false)
+        updateTask(taskId, data, false);
     }
 
     function handleEdit(event) {
@@ -26,10 +27,10 @@ export default function Collapsible(props) {
     }
 
     function handleCancel(event) {
-        if (formName.current.value === "")  {
+        if (name === "")  {
             handleDelete(event);
         } else {
-            handleSubmit(event);
+            updateTask(taskId, name, false);
         }
     }
 
@@ -39,14 +40,21 @@ export default function Collapsible(props) {
                 <div className = "form-container">
                     < form className = "form" >
                         <input
-                            defaultValue={name}
+                            
                             type="text"
                             placeholder="What are you working on?"
                             className="form-input"
                             name="name"
-                            // value={name}
-                            ref = {formName}
-                            onChange={(event) => updateTask(event)}
+                            value={data}
+                           
+                            onChange={(event) => {
+                                setData(event.target.value)
+                                }
+                            }
+                                
+                            
+
+                            
                         />
                         {/* <input
                             type="text"
@@ -57,7 +65,7 @@ export default function Collapsible(props) {
                             onChange={(event) => updateTask(event) }
                         />*/}
                         <div> 
-                            <button name="isExpanded" onClick = {handleSubmit}>Save</button>
+                            <button onClick = {handleSubmit} disabled={data === ""?  true : false}>Save</button>
                             <button onClick = {handleDelete}>Delete</button>
                             <button onClick = {handleCancel}>Cancel</button>
                         </div>

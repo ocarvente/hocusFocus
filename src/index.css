@@ -302,4 +302,25 @@ button {
 
 }
 
+.dialogContainer {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
  
+.settings-label {
+  justify-self: center;
+  font-weight: bold;
+}
+.settings-button {
+  justify-self: center;
+  padding: 1ch;
+  width: 5ch;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+
+  opacity: 1;
+
+}
